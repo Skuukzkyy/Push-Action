@@ -31,7 +31,7 @@ describe("Testing GitCommand.status()", function(){
         let git = new GitCommand(wd);
         git.init();
         let output = git.commit('added new feature');
-
+        output = false;
         expect(output).to.equal('Nothing to commit.');
     });
 })
