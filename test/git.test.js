@@ -25,4 +25,13 @@ describe("Testing GitCommand.status()", function(){
 
         expect(output).to.equal('You have 0 change/s.\n');
     });
+
+    it('Should return Nothing to commit if no changes in directory', function(){
+        let wd = new WorkingDirectory();
+        let git = new GitCommand(wd);
+        git.init();
+        let output = git.commit('added new feature');
+
+        expect(output).to.equal('Nothing to commit.');
+    });
 })
